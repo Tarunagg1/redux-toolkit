@@ -1,15 +1,18 @@
-import React from 'react'
-import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import React, { Fragment } from 'react'
+import Cart from './Components/Cart';
 import Dashboard from './Components/Dashboard';
-import Postpage from './Components/Postpage';
-import Postspage from './Components/Postspage';
 
 export default function App() {
   return (
-    <Router>
-      <Route exact path="/" component={Dashboard} />
-      <Route exact path="/posts" component={Postspage} />
-      <Route exact path="/posts/:id" component={Postpage} />
-    </Router>
+    <Fragment>
+      <div divclassName="container mx-auto flex flex-row">
+        <div className="w-3/4">
+          <Dashboard />
+        </div>
+        <div className="w-1/4">
+          <Cart />
+        </div>
+      </div>
+    </Fragment>
   )
 }
